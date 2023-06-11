@@ -1,6 +1,11 @@
+// index.js
 function main(args) {
-    let name = args.name || 'stranger'
-    let greeting = 'Hello ' + name + '!'
-    console.log(greeting)
-    return {"body": greeting}
+  if(args.message) {
+    console.log(`message received with text: ${args.message.text}`)
+    return {"body": "OK"}
+  }
+
+  return {}
 }
+
+exports.main = main

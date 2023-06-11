@@ -16,6 +16,10 @@ packages:
       web: true
       webSecure: false
       parameters: {}
-      environment: {}
+      environment: {
+        LOG_DESTINATIONS: '[
+          {"papertrail":{"token":"${PAPERTRAIL_TOKEN}"}}
+        ]'
+      }
       annotations: {}
       limits: {}
