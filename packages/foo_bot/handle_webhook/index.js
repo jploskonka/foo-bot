@@ -1,4 +1,7 @@
+const TelegramBot = require('node-telegram-bot-api')
 const { Configuration, OpenAIApi } = require('openai')
+
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN)
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_TOKEN
@@ -22,6 +25,9 @@ async function main(args) {
     })
 
     const { content } = completion.data.choices[0].message
+    const { chat } = args.message
+
+    await bot.sendMessage(chat.id, content)
 
     console.log(`For message: ${text}; Reply from GPT: ${content}`)
   } catch (err) {

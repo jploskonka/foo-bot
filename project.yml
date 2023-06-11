@@ -20,7 +20,8 @@ packages:
         LOG_DESTINATIONS: '[
           {"papertrail":{"token":"${PAPERTRAIL_TOKEN}"}}
         ]',
-        OPENAI_API_TOKEN: ${OPENAI_API_TOKEN}
+        OPENAI_API_TOKEN: ${OPENAI_API_TOKEN},
+        TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
       }
       annotations: {}
       limits: {}
